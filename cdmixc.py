@@ -78,7 +78,7 @@ def _ShowReport():
 def sendsms(msg):  
     if not msg=="" and not marketing_manager=="":
         #msg=msg.encode("gbk")
-        arg={'USER_ID':"cdmixc", 'PASSWORD':"123", 'FROM_ID':"admin", 'TO_ID':marketing_manager, 'CONTENT':msg.encode("gbk")}
+        arg={'USER_ID':"cdmixc", 'PASSWORD':"***********", 'FROM_ID':"admin", 'TO_ID':marketing_manager, 'CONTENT':msg.encode("gbk")}
         msg=urllib.parse.urlencode(arg)
         url="http://crlandcd.com/interface/sms.php?"+msg
         #print(url)
