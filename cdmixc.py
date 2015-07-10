@@ -140,7 +140,7 @@ def run():
                 sys.stdout.write('已完成 '+str(round(float(i/filecount)*100, 1))+'%                                                         ')
             
             sys.stdout.flush()
-            time.sleep(0.002)
+            time.sleep(0.008)
 
 if __name__=="__main__":
     run()
