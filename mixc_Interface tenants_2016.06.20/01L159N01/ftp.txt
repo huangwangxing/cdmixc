@@ -1,0 +1,7 @@
+l159
+l159
+cd C:\Windows\AutoFtpUp\FTP_UpFile329
+bin
+put "C:\Windows\AutoFtpUp\FTP_UpFile329\$"
+put "C:\Windows\AutoFtpUp\FTP_UpFile329\ftp.txt"
+bye
