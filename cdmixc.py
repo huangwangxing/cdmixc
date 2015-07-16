@@ -5,7 +5,7 @@
 import os, sys, time, platform, urllib, urllib.request, urllib.parse, time
 
 
-path = "/mnt/资料/mixc_Interface tenants_2016.06.20" #默认搜索路径
+path = "./mixc_Interface tenants_2016.06.20" #默认搜索路径
 shopdb="shopno.txt" #店铺名称数据库
 marketing_manager = "cd0189" #运营主管在成都OA帐号
 
@@ -13,7 +13,7 @@ filelist = [] #文件列表
 emptypath=[] #空目录，视为未上传业绩租户
 shoppos=dict()
 filecount = 0 #文件总数量
-sp="/"
+#sp="/"
 SystemType = "UNKNOWEN"
 SystemBit = "UNKNOWEN"
 emptylist=""
@@ -38,11 +38,11 @@ def _getSystem():
     elif SystemType=='WindowsPE':
         os.system("cls")
         SystemType='Windows'
-        sp='\\'
+        #sp='\\'
         print ("系统类型：{0} {1} \n".format(SystemType, SystemBit))
     else:
         SystemType="操作系统未知，检测失败，店铺分页可能出现显示异常，但不会引起运行错误。"
-        sp='/'
+        #sp='/'
         
 def _getEmpty():
     #获取空目录
@@ -60,8 +60,10 @@ def _ShowReport():
     emptylist="<table>"
     for empty in emptypath:
         i+=1
-        posnumber=empty.split(sp)[-1] 
+        #posnumber=empty.split(sp)[-1] 
+        _,posnumber=os.path.split(empty)
         
+
         try:
             posname=shoppos[posnumber.upper()] 
         except:
@@ -102,7 +104,7 @@ def sendsms(msg):
 def run():
 
     if not os.path.exists(path):
-        print("\n目录不存在，请检查配置文件，程序退出\n")
+        print("\n需要检查的目录不存在，请修改文件查找路径，程序退出\n")
         exit(1)
     _ReadShopNo()
     _getSystem()
